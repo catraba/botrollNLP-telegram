@@ -107,8 +107,3 @@ def handling(mensaje):
                     return 'Las mejores ' + span.text + ' en Madrid'
                 else:
                     pass
-
-            for match_id, start, end in matches:
-                span = doc[start:end]
-
-                return 'Best ' + span.text + ' en Madrid'
