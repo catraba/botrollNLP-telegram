@@ -91,11 +91,8 @@ def handling(mensaje
         if token.text in faltas_ortograficas:
             return('Escribe bien o te meto eh')
     
-    for palabra in doc.ents:
-        if palabra.label_ == 'ORG':
-            return 'Estos capitalistas...'
-        
-        elif palabra.label_ == 'LOC':
+    for palabra in doc.ents:     
+        if palabra.label_ == 'LOC':
             patron = [{"DEP": {"IN": ["nmod", "ROOT"]}, "POS": {"NOT_IN": ["ADP", "PROPN"]}}]
 
             matcher = Matcher(nlp.vocab)
