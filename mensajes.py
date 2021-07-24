@@ -45,14 +45,4 @@ def messageHandler(mensaje):
         return Vacunas.estadoVacunas()
 
     else:
-        mensaje = mensaje.lower()
-        palabras = mensaje.split(' ')
-        
-        faltas_ortograficas = ["aki", "alante", "ami", "asin", "aver", "llendo", "haiga", "hoygan", "na", "pa", "pal"]
-        
-        for palabra in palabras:
-            if palabra in faltas_ortograficas:
-                return 'Mis hogos'
-
-            else:
-                return handling(mensaje)
+        return handing(mensaje)
