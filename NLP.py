@@ -82,20 +82,34 @@ def mencion(mensaje, codigos, modelo):
 '''
 
     
-def handling(mensaje):
+def handling(mensaje
+    faltas_ortograficas = ["aki", "alante", "ami", "asin", "aver", "llendo", "haiga", "hoygan", "na", "pa", "pal"]
+                           
     doc = nlp(mensaje)
+             
+    for token in doc:
+        if token.text in faltas_ortograficas:
+            return('Escribe bien o te meto eh')
     
     for palabra in doc.ents:
         if palabra.label_ == 'ORG':
             return 'Estos capitalistas...'
         
         elif palabra.label_ == 'LOC':
-            patron = [{"DEP": "nmod", "POS": {"NOT_IN": ["ADP"]}}]
+            patron = [{"DEP": {"IN": ["nmod", "ROOT"]}, "POS": {"NOT_IN": ["ADP", "PROPN"]}}]
 
             matcher = Matcher(nlp.vocab)
             matcher.add("Matcheador", [patron])
 
             matches = matcher(doc)
+             
+            for match_id, start, end in matches:
+                span = doc[start:end]
+
+                if span is not None:
+                    return 'Las mejores ' + span.text + ' en Madrid'
+                else:
+                    pass
 
             for match_id, start, end in matches:
                 span = doc[start:end]
