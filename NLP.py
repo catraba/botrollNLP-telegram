@@ -82,7 +82,7 @@ def mencion(mensaje, codigos, modelo):
 '''
 
     
-def handling(mensaje
+def handling(mensaje):
     faltas_ortograficas = ["aki", "alante", "ami", "asin", "aver", "llendo", "haiga", "hoygan", "na", "pa", "pal"]
                            
     doc = nlp(mensaje)
