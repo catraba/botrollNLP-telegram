@@ -90,7 +90,7 @@ def handling(mensaje):
             return 'Estos capitalistas...'
         
         elif palabra.label_ == 'LOC':
-            patron = [{"POS": "NOUN"}, {"LIKE_NUM": False}]
+            patron = [{"DEP": "nmod", "POS": {"NOT_IN": ["ADP"]}}]
 
             matcher = Matcher(nlp.vocab)
             matcher.add("Matcheador", [patron])
@@ -100,4 +100,4 @@ def handling(mensaje):
             for match_id, start, end in matches:
                 span = doc[start:end]
 
-                return 'Las mejores ' + span.text + ' en Madrid'
+                return 'Best ' + span.text + ' en Madrid'
