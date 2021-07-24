@@ -45,4 +45,4 @@ def messageHandler(mensaje):
         return Vacunas.estadoVacunas()
 
     else:
-        return handing(mensaje)
+        return handling(mensaje)
