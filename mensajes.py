@@ -4,7 +4,7 @@ from re import match
 from random import choice
 
 from scraping import MonedasV, Vacunas
-#from NLP import handling
+from NLP import handling
 
 #codigos, modelo = processing()
 
@@ -55,4 +55,4 @@ def messageHandler(mensaje):
                 return 'Mis hogos'
 
             else:
-                pass
+                return handling(mensaje)
