@@ -93,7 +93,7 @@ def handling(mensaje):
     
     for palabra in doc.ents:     
         if palabra.label_ == 'LOC':
-            patron = [{"DEP": {"IN": ["nmod", "ROOT"]}, "POS": {"NOT_IN": ["ADP", "PROPN", "VERB"]}}]
+            patron = [{"DEP": {"IN": ["nmod", "NOUN", "ROOT"]}, "POS": {"NOT_IN": ["ADP", "ADJ", "PROPN", "VERB"]}}]
 
             matcher = Matcher(nlp.vocab)
             matcher.add("Matcheador", [patron])
