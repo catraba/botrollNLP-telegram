@@ -93,17 +93,19 @@ def handling(mensaje):
     
     for palabra in doc.ents:     
         if palabra.label_ == 'LOC':
-            patron = [{"DEP": {"IN": ["nmod", "NOUN", "ROOT"]}, "POS": {"NOT_IN": ["ADP", "ADJ", "PROPN", "VERB"]}}]
+            if ent.text != 'Cómo' and ent.text != 'Qué' and ent.text != 'Movil' and ent.text != 'Suena':
+                
+                patron = [{"DEP": {"IN": ["nmod", "NOUN", "ROOT"]}, "POS": {"NOT_IN": ["ADP", "ADJ", "AUX", "PRON", "PROPN", "VERB"]}}]
 
-            matcher = Matcher(nlp.vocab)
-            matcher.add("Matcheador", [patron])
+                matcher = Matcher(nlp.vocab)
+                matcher.add("Matcheador", [patron])
 
-            matches = matcher(doc)
+                matches = matcher(doc)
              
-            for match_id, start, end in matches:
-                span = doc[start:end]
+                for match_id, start, end in matches:
+                    span = doc[start:end]
 
-                if span is not None:
-                    return 'Las mejores ' + span.text + ' en Madrid'
-                else:
-                    pass
+                    if span is not None:
+                        return 'Las mejores ' + span.text + ' en Madrid'
+                    else:
+                        pass
