@@ -93,7 +93,7 @@ def handling(mensaje):
     
     for palabra in doc.ents:     
         if palabra.label_ == 'LOC':
-            if ent.text != 'Cómo' and ent.text != 'Qué' and ent.text != 'Movil' and ent.text != 'Suena':
+            if palabra.text != 'Cómo' and palabra.text != 'Qué' and palabra.text != 'Movil' and palabra.text != 'Suena':
                 
                 patron = [{"DEP": {"IN": ["nmod", "NOUN", "ROOT"]}, "POS": {"NOT_IN": ["ADP", "ADJ", "AUX", "PRON", "PROPN", "VERB"]}}]
 
