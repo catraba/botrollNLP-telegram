@@ -84,8 +84,9 @@ def mencion(mensaje, codigos, modelo):
     
 def handling(mensaje):
     faltas_ortograficas = ["aki", "alante", "ami", "asin", "aver", "llendo", "haiga", "hoygan", "na", "pa", "pal"]
+    false_loc = ['cómo', 'qué', 'movil', 'suena', 'aver']
                            
-    doc = nlp(mensaje)
+    doc = nlp(mensaje.lower())
              
     for token in doc:
         if token.text in faltas_ortograficas:
@@ -93,12 +94,15 @@ def handling(mensaje):
     
     for palabra in doc.ents:     
         if palabra.label_ == 'LOC':
-            if palabra.text != 'Cómo' and palabra.text != 'Qué' and palabra.text != 'Movil' and palabra.text != 'Suena':
+            if palabra.text not in false_loc:
                 
-                patron = [{"DEP": {"IN": ["nmod", "NOUN", "obj", "PROPN", "ROOT"]}, "POS": {"NOT_IN": ["ADP", "ADJ", "AUX", "PRON", "VERB"]}}]
+                pattern1 = [{"DEP": {"IN": ["nsubj", "obj"]}},
+                            {"OP": "?"}]
+                pattern2 = [{"POS": {"IN": ['NOUN']}},
+                            {"OP": "?"}]
 
                 matcher = Matcher(nlp.vocab)
-                matcher.add("Matcheador", [patron])
+                matcher.add("Matcheador", [pattern1, pattern2)
 
                 matches = matcher(doc)
              
