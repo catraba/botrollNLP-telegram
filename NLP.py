@@ -102,7 +102,7 @@ def handling(mensaje):
                             {"OP": "?"}]
 
                 matcher = Matcher(nlp.vocab)
-                matcher.add("Matcheador", [pattern1, pattern2)
+                matcher.add("Matcheador", [pattern1, pattern2])
 
                 matches = matcher(doc)
              
