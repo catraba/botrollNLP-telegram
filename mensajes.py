@@ -35,6 +35,11 @@ def messageHandler(mensaje):
         scrapper = MonedasV('ethereum')
         
         return scrapper.extrarPrecio()
+    
+    elif mensaje == '/ada':
+        scrapper = MonedasV('cardano')
+        
+        return scrapper.extrarPrecio()
 
     elif mensaje == '/dot':
         scrapper = MonedasV('polkadot-new')
