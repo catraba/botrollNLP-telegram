@@ -1,5 +1,5 @@
 from spacy import load
-nlp = load('es_core_news_sm-3.0.0/es_core_news_sm/es_core_news_sm-3.0.0', disable=["lemmatizer", "textcat", "custom"])
+nlp = load('es_core_news_sm-3.1.0/es_core_news_sm/es_core_news_sm-3.1.0', disable=["lemmatizer", "textcat", "custom"])
 
 from spacy.matcher import Matcher
 
