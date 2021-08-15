@@ -1,28 +1,19 @@
 import os
-import json
 from re import match
-from random import choice
 
 from scraping import MonedasV, Vacunas
 from NLP import handling
 
-#codigos, modelo = processing()
-
-#with open(os.path.join(os.getcwd(), 'conversaciones.json')) as file:
-    #conversaciones = json.load(file)
 
 def messageHandler(mensaje):
-    
     patron = '(.*)' + os.environ["BOT_NICK"] + '(.*)'
     matcher = match(patron, mensaje)
 
-    if matcher:
-        #mensaje = mensaje.replace(os.environ["BOT_NICK"], '').strip()
-        
-        return 'No tengo suficiente memoria RAM, a ver si @cryptofono hace algo al respecto' #mencion(lemmatizer(mensaje), codigos, modelo)
+    if matcher:     
+        return 'No tengo suficiente memoria RAM, a ver si @cryptofono hace algo al respecto'
         
     elif mensaje == '/start':
-        quehaceres = 'Comandos disponibles:\n\n/btc: Valor del bitcoin actual. También disponible con eth y dot\n/vacunas: Estado de la vacunación COVID-19 en España'
+        quehaceres = 'Comandos disponibles:\n\n/btc: Valor del bitcoin actual. También disponible con eth, ada y dot\n/vacunas: Estado de la vacunación COVID-19 en España'
 
         return quehaceres
 
