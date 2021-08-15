@@ -87,7 +87,7 @@ def mencion(mensaje, codigos, modelo):
 def handling(mensaje):
     faltas_ortograficas = ["aki", "alante", "ami", "asin", "aver", "llendo", "haiga", "hoygan", "na", "pa", "pal"]
     false_loc = ['cómo', 'qué', 'movil', 'suena', 'aver']
-    url_pattern = '.*\:\/\/(?:www.)?([^\/]+)'
+    url_pattern = r'.*\:\/\/(?:www.)?([^\/]+)'
                            
     doc = nlp(mensaje.lower())
            
