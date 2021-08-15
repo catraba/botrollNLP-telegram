@@ -3,6 +3,8 @@ nlp = load('es_core_news_sm-3.0.0/es_core_news_sm/es_core_news_sm-3.0.0', disabl
 
 from spacy.matcher import Matcher
 
+from re import match
+
 '''
 from numpy import array, asarray, reshape, argmax
 from sklearn.linear_model import LogisticRegression
@@ -85,9 +87,17 @@ def mencion(mensaje, codigos, modelo):
 def handling(mensaje):
     faltas_ortograficas = ["aki", "alante", "ami", "asin", "aver", "llendo", "haiga", "hoygan", "na", "pa", "pal"]
     false_loc = ['cómo', 'qué', 'movil', 'suena', 'aver']
+    url_pattern = '.*\:\/\/(?:www.)?([^\/]+)'
                            
     doc = nlp(mensaje.lower())
-             
+           
+    url_match = match(url_pattern, mensaje)
+    
+    if url_match:
+        for token in doc:
+            if not token.ent_type_:
+                return('Ni con tu Wi-Fi')
+        
     for token in doc:
         if token.text in faltas_ortograficas:
             return('Escribe bien o te meto eh')
