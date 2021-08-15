@@ -5,7 +5,6 @@ from spacy.matcher import Matcher
 
 from re import match
 
-
     
 def handling(mensaje):
     faltas_ortograficas = ["aki", "alante", "ami", "asin", "aver", "llendo", "haiga", "hoygan", "na", "pa", "pal"]
