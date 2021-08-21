@@ -10,4 +10,5 @@ Simple y pequeño Bot de Telegram para grupos el cual puede crear situaciones co
 * Scraping criptomonedas y vacunas covid-19
 * Detección de faltas ortográficas
 * Respuestas en función de localizaciones y/o entidades
+* Reconocimiento de URLs no famosas
 * Conversación basada en word2vec
