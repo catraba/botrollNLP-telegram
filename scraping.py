@@ -12,7 +12,7 @@ class MoneyV():
 
     @property
     def url(self) -> str:
-        return f'https://es.investing.com/crypto/{self._coin}'
+        return f'https://coinmarketcap.com/es/currencies/{self._coin}'
 
     @property
     def headers(self) -> dict:
@@ -26,8 +26,9 @@ class MoneyV():
         soup = BeautifulSoup(get(self.url, headers=self.headers).text, 
                             'html.parser')
 
-        for link in soup.find_all('span'):
-            if link.get('id') == 'last_last':
-                value = f'$ {link.string}'
+        class_ = soup.find(class_='priceValue')
+
+        if class_:
+            value = class_.text
 
         return value
