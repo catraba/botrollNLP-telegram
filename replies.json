@@ -1,0 +1,26 @@
+{
+    "faltas": [
+        "aki", "alante", "ami", "asin", "aver", 
+        "llendo", "haiga", "hoygan", "na", "pa", 
+        "pal"
+    ],
+    "faltas_respuestas": [
+        "Mis hojos",
+        "A ver si aprendemos a escribir melón"
+    ],
+    "tocho": [
+        "Me espero a la película",
+        "¿Y el resumen?",
+        "Pedazo ladrillo hulio"
+    ],
+    "risa": [
+        "¿De qué te ríes, payaso?",
+        "Ni puta gracia",
+        "Jajajajajajaja, no"
+    ],
+    "url": [
+        "Ni con tu Wi-Fi",
+        "100% real no fake 1 link mega",
+        "No clico ahí ni con tu ratón"
+    ]
+}

@@ -1,0 +1,13 @@
+# Carpetas específicas
+__pycache__
+.vscode
+env
+
+# Ficheros
+*.cfg
+*.pem
+*.md
+
+# Ficheros específicos
+.dockerignore
+tokens.py
