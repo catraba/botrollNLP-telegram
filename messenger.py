@@ -2,10 +2,11 @@ from random import choice, randint
 from re import match
 
 from ChatGPT import gen_chat_response
-from constants import jaj, www
-from json_read import json_replies
-from NLP import LocAndEur
-from scraping import MoneyV
+from LocAndEur import LocAndEur
+from MoneyV import MoneyV
+from utils.constants import jaj, www
+from utils.utils import json_replies
+from unshared import BOTNAME
 
 
 replies = json_replies()
@@ -27,7 +28,7 @@ def messenger(message: str) -> str:
 
         return 'Comando no disponible'
 
-    elif match('(.)*@botname(.)*', message):
+    elif match(f'(.)*{BOTNAME}(.)*', message):
         return gen_chat_response(message)
 
     else:
