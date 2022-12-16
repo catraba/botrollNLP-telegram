@@ -10,7 +10,7 @@ def gen_chat_response(msg: str) -> str:
     res = openai.Completion.create(
         engine="text-davinci-003",
         prompt=msg.replace('@botname', ''),
-        temperature=0.8,
+        temperature=0.9,
         max_tokens=256,
         #stop="."
     )
