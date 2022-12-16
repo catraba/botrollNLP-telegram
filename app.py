@@ -1,8 +1,8 @@
 from flask import Flask, request
 
-from messages import messenger
+from messenger import messenger
 from Telegram import Telegram
-from tokens import TELEGRAM_TOKEN
+from unshared import TELEGRAM_TOKEN
 
 
 app = Flask(__name__)

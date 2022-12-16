@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from requests import get, post
+from requests import post
 
 
 
@@ -13,11 +13,11 @@ class Telegram():
     def url(self) -> str:
         return f'https://api.telegram.org/bot{self.__token}/'
 
-    def getUpdates(self, offset=None) -> dict:
-        url = get(f'{self.base}getUpdates', 
-                    data={'offset': offset})
+    # def getUpdates(self, offset=None) -> dict:
+    #     url = get(f'{self.base}getUpdates', 
+    #                 data={'offset': offset})
 
-        return url.json()
+    #     return url.json()
 
     def send_message(self, chat_id: str, text: str, 
                     reply_to_message_id=None) -> None:

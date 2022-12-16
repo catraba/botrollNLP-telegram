@@ -1,6 +1,6 @@
 from random import choice
 
-from constants import gen_GN, matcher, nlp
+from utils.constants import gen_GN, matcher, nlp
 
 
 class LocAndEur():
