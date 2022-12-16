@@ -1,7 +1,7 @@
 from random import choice, randint
 from re import match
 
-from ChatGPT import gen_chat_response
+from openai_chat import gen_chat_response
 from LocAndEur import LocAndEur
 from MoneyV import MoneyV
 from utils.constants import jaj, www
