@@ -6,7 +6,6 @@ env
 # Ficheros
 *.cfg
 *.pem
-*.md
 
 # Ficheros específicos
 .dockerignore
