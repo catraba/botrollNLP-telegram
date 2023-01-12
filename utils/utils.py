@@ -3,7 +3,7 @@ from os import getcwd
 
 
 def json_replies() -> dict:
-    f = open(f'{getcwd()}/replies.json', 
+    f = open(f'{getcwd()}/utils/replies.json', 
         encoding='utf-8',
         mode='r')
 

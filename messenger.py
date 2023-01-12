@@ -15,7 +15,7 @@ replies = json_replies()
 def messenger(message: str) -> str:
     words = message.split(' ')
 
-    if len(words) > 33:
+    if len(words) > 67:
         return choice(replies['tocho'])
 
     elif len(words) == 1 and message.startswith('/'):
@@ -43,7 +43,7 @@ def messenger(message: str) -> str:
                 return LocAndEur(message).matcher_loc()
 
             else:
-                if randint(1, 5) == 1:
+                if randint(1, 10) == 1:
                     return gen_chat_response(message)
 
         else:
