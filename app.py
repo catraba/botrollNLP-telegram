@@ -13,7 +13,7 @@ bot = Telegram(TELEGRAM_TOKEN)
 def main() -> None:
     data = request.json
 
-    if data['message']['chat']['type'] == 'group':
+    if data['message']['chat']['type'] in ['group', 'supergroup']:
         message = data['message'].get('text')
 
         if isinstance(message, str):
