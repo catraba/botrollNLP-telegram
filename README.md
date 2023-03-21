@@ -4,6 +4,7 @@ Esto es un BOT troll para grupos en Telegram programado para que cree una serie 
 - Responder "Me espero a la película", "¿Y el resumen?"... o lo que se defina en un fichero .json cuando alguien escribe mucho texto por el grupo.
 - Responder "No clico ahí ni con tu ratón", "100% real no face 1 link mega"... si alguien ha pasado una dirección Web poco fiable.
 - Meterse con una persona que escribe con faltas o se ríe.
+- Llamar machista o similar al quien realiza un comentario sexista.
 - Contestar "Yo siempre le echo 20€ a mi X" o "Poco me parece" cuando alguien habla de cantidades. Por ejemplo:
   
  ```
@@ -114,6 +115,11 @@ En *token_id* escribimos el que nos aportó Telegram. Además, pasarle un par de
   
 * url: https://*domain*.duckdns.org
 * certificate: el archivo .pem generado anteriormente.
+
+
+# Modelo sexista
+
+Para conseguir el dataset es necesario rellenar [este formulario](https://forms.office.com/Pages/ResponsePage.aspx?id=SHBYtXCgrUO2VCCjHpstmc1J3Gu50zdMhFmXSTrhRZJUM1FQUTlSUUNQMEZZR01SRTVMVDg3SktaSC4u). Una vez conseguido, basta con ejecutar una a una cada celda del notebook del repositorio. Guardamos el modelo creado para que el bot pueda hacer predicciones sobre él.
 
   
 # Ejecutar la app
