@@ -1,6 +1,7 @@
 from random import choice, randint
 from re import match
 
+from hf_model import get_sexist_res
 from openai_chat import gen_chat_response
 from LocAndEur import LocAndEur
 from MoneyV import MoneyV
@@ -45,6 +46,11 @@ def messenger(message: str) -> str:
             else:
                 if randint(1, 10) == 1:
                     return gen_chat_response(message)
+                
+                else:
+                    if get_sexist_res(message):
+                        return choice(replies['sexista'])
+
 
         else:
             for word in words:
