@@ -1,6 +1,13 @@
 from spacy import load
 from spacy.matcher import Matcher
 
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
+
+
+
+model = AutoModelForSequenceClassification \
+    .from_pretrained('./modelo_sexismo')
+tokenizer = AutoTokenizer.from_pretrained('./modelo_sexismo')
 
 nlp = load('es_dep_news_trf', disable=["tok2vec", "lemmatizer"])
 
